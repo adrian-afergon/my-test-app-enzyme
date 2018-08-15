@@ -22,4 +22,10 @@ describe ('test', () => {
     const aButton = element.find('Button');
     expect(aButton.exists()).toBeTruthy();
   });
+  it('should click a button', () => {
+      const element = shallow(<App/>);
+      const aButton = element.find('Button');
+      aButton.get(0).props.onPress();
+      expect(aButton.exists()).toBeTruthy();
+  });
 });
