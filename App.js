@@ -5,20 +5,21 @@ export default class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {text: 'Hello World'};
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.state.text}</Text>
+          <Text>Open up App.js to start working on your app!</Text>
+          <Text>Changes you make will automatically reload.</Text>
+          <Text>Shake your phone to open the developer menu.</Text>
           <Button title='This is my button' onPress={this.handlerPress}/>
       </View>
     );
   }
 
   handlerPress = () => {
-    this.setState({text: 'Button has been clicked'});
+    this.props.myMethod();
   }
 
 }
