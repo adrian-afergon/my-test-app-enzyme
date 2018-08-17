@@ -34,4 +34,12 @@ describe ('test', () => {
     const aTextInput = element.find('TextInput');
     expect(aTextInput.exists()).toBeTruthy();
   });
+  it('should change the text', () => {
+    const changeMock = jest.fn();
+    const aText = 'irrelevant';
+    const element = shallow(<App changeText={changeMock}/>);
+    const aTextInput = element.find('TextInput');
+    aTextInput.find('TextInput').get(0).props.onChangeText(aText);
+    expect(changeMock).toHaveBeenCalled();
+  })
 });
