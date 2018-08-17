@@ -29,4 +29,9 @@ describe ('test', () => {
     aButton.get(0).props.onPress();
     expect(aEvent).toHaveBeenCalled();
   });
+  it('should have a text entry', () => {
+    const element = shallow(<App/>);
+    const aTextInput = element.find('TextInput');
+    expect(aTextInput.exists()).toBeTruthy();
+  });
 });
